@@ -1,0 +1,6 @@
+<view class="container">
+  <text class="title">内容管理中心</text>
+  <button type="primary" class="hub-button" bindtap="navigateToPage" data-page="entry-chinese">录入语文 (Enter Chinese)</button>
+  <button type="primary" class="hub-button" bindtap="navigateToPage" data-page="entry-english">录入英语 (Enter English)</button>
+  <button type="default" class="hub-button" bindtap="navigateToPage" data-page="manage-lexicon">查看与管理词库 (View & Manage Lexicon)</button>
+</view>

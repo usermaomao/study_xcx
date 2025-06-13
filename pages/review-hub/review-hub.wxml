@@ -1,0 +1,19 @@
+<view class="container">
+  <text class="title">复习中心 - {{childName}}</text>
+  <view wx:if="{{isLoading}}" class="loading-message">
+    <text>加载复习任务中...</text>
+  </view>
+  <view wx:else>
+    <view wx:if="{{dueItems.length > 0}}" class="due-section">
+      <text class="due-count">今日有 {{dueItems.length}} 项待复习内容。</text>
+      <text class="due-prompt">准备好了吗？</text>
+      <button type="primary" class="start-review-button" bindtap="startDictationReview">开始听写复习</button>
+      <!-- <text class="debug-due-items" wx:if="{{false}}">{{debugDueItems}}</text> -->
+    </view>
+    <view wx:else class="no-due-section">
+      <text>太棒了！今日已无复习任务。</text>
+      <text>可以去 <text class="nav-link" bindtap="goToContentHub">内容管理</text> 添加新内容，或稍后再来。</text>
+    </view>
+  </view>
+  <button type="default" class="back-button" bindtap="goBack">返回首页</button>
+</view>

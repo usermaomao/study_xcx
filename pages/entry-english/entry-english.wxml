@@ -1,0 +1,22 @@
+<view class="container">
+  <text class="title">{{editingId ? '编辑' : '录入'}}英语内容</text>
+  <form bindsubmit="saveContent">
+    <view class="form-group">
+      <label>单词 (Word):</label>
+      <input name="word" value="{{word}}" placeholder="输入单词" bindinput="handleInput" data-field="word" />
+    </view>
+    <view class="form-group">
+      <label>音标 (Phonetic):</label>
+      <input name="phonetic" value="{{phonetic}}" placeholder="输入音标" bindinput="handleInput" data-field="phonetic" />
+    </view>
+    <view class="form-group">
+      <label>释义 (Definition):</label>
+      <textarea name="definition" value="{{definition}}" placeholder="输入释义" bindinput="handleInput" data-field="definition" auto-height="true"></textarea>
+    </view>
+    <view class="form-group">
+      <label>例句 (Example Sentence):</label>
+      <textarea name="example" value="{{example}}" placeholder="输入例句" bindinput="handleInput" data-field="example" auto-height="true"></textarea>
+    </view>
+    <button form-type="submit" type="primary">保存 (Save)</button>
+  </form>
+</view>

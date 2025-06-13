@@ -1,0 +1,73 @@
+.container {
+  padding: 30rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.title {
+  font-size: 38rpx;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+  display: block;
+}
+
+.loading-message,
+.no-due-section,
+.due-section {
+  margin-top: 60rpx;
+  padding: 30rpx;
+  background-color: #f9f9f9;
+  border-radius: 10rpx;
+  min-height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.due-count {
+  font-size: 34rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.due-prompt {
+  font-size: 30rpx;
+  color: #555;
+  margin-bottom: 40rpx;
+}
+
+.start-review-button {
+  width: 80%;
+  margin-top: 20rpx;
+}
+
+.no-due-section text {
+  display: block;
+  margin-bottom: 15rpx;
+  line-height: 1.6;
+}
+
+.nav-link {
+  color: #007aff; /* Or your app's primary color */
+  text-decoration: underline;
+  display: inline; /* Make it part of the text flow */
+}
+
+.back-button {
+  margin-top: 50rpx;
+  width: 60%;
+}
+
+/* For debugging due items output */
+.debug-due-items {
+  font-size: 20rpx;
+  color: #888;
+  text-align: left;
+  word-break: break-all;
+  max-height: 200px;
+  overflow-y: scroll;
+  border: 1px solid #eee;
+  padding: 5px;
+  margin-top: 10px;
+}

@@ -1,0 +1,52 @@
+<view class="container">
+  <text class="title">词库管理</text>
+
+  <view wx:if="{{!currentChildId}}" class="no-child-message">
+    <text>请先在家长控制台选择一个孩子。</text>
+    <button bindtap="goToParentDashboard" size="mini">去选择</button>
+  </view>
+
+  <view wx:if="{{currentChildId}}">
+    <view class="section">
+      <text class="section-title">语文内容 (Chinese)</text>
+      <view wx:if="{{chineseEntries.length === 0}}" class="empty-list">
+        <text>暂无语文内容。 前往</text>
+        <text class="nav-link" bindtap="goToEntryPage" data-type="chinese">录入</text>
+      </view>
+      <view wx:else class="lexicon-list">
+        <view wx:for="{{chineseEntries}}" wx:key="id" class="lexicon-item chinese-item">
+          <view class="item-content">
+            <text class="item-main">{{item.character || item.phrase}}</text>
+            <text class="item-sub">{{item.pinyin}}</text>
+            <text class="item-def">{{item.definition}}</text>
+          </view>
+          <view class="item-actions">
+            <button size="mini" bindtap="editItem" data-id="{{item.id}}" data-type="chinese">编辑</button>
+            <button size="mini" type="warn" bindtap="deleteItem" data-id="{{item.id}}" data-type="chinese">删除</button>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <text class="section-title">英语内容 (English)</text>
+      <view wx:if="{{englishEntries.length === 0}}" class="empty-list">
+        <text>暂无英语内容。 前往</text>
+        <text class="nav-link" bindtap="goToEntryPage" data-type="english">录入</text>
+      </view>
+      <view wx:else class="lexicon-list">
+        <view wx:for="{{englishEntries}}" wx:key="id" class="lexicon-item english-item">
+          <view class="item-content">
+            <text class="item-main">{{item.word}}</text>
+            <text class="item-sub">{{item.phonetic}}</text>
+            <text class="item-def">{{item.definition}}</text>
+          </view>
+          <view class="item-actions">
+            <button size="mini" bindtap="editItem" data-id="{{item.id}}" data-type="english">编辑</button>
+            <button size="mini" type="warn" bindtap="deleteItem" data-id="{{item.id}}" data-type="english">删除</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
