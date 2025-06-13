@@ -1,0 +1,46 @@
+<view class="container">
+  <view wx:if="{{isLoading}}" class="loading-message">
+    <text>加载复习内容...</text>
+  </view>
+  <view wx:elif="{{!currentItem && dueItems.length > 0 && currentIndex >= dueItems.length}}" class="session-complete">
+    <text class="complete-title">🎉 复习完成! 🎉</text>
+    <text>本次所有复习任务均已完成。</text>
+    <button type="primary" bindtap="goBackToHub">返回复习中心</button>
+    <button type="default" bindtap="goBackToIndex">返回首页</button>
+  </view>
+  <view wx:elif="{{!currentItem || dueItems.length === 0}}" class="no-items">
+    <text>当前没有需要复习的内容。</text>
+    <text wx:if="{{allItems.length > 0}}">所有内容都已掌握或未到复习时间。</text>
+    <text wx:else>还没有添加任何学习内容哦。</text>
+    <button type="primary" bindtap="goBackToHub">返回复习中心</button>
+  </view>
+
+  <view wx:if="{{currentItem}}" class="dictation-card">
+    <text class="progress-text">进度: {{currentIndex + 1}} / {{dueItems.length}}</text>
+    <text class="item-type">{{currentItem.type === 'chinese' ? '语文' : '英语'}}</text>
+
+    <view class="prompt-section">
+      <text class="prompt-label">请根据提示写出:</text>
+      <text wx:if="{{currentItem.type === 'chinese' && currentItem.pinyin}}" class="prompt-text pinyin">{{currentItem.pinyin}}</text>
+      <text wx:elif="{{currentItem.type === 'english' && currentItem.definition}}" class="prompt-text definition">{{currentItem.definition}}</text>
+      <text wx:else class="prompt-text word-prompt">{{currentItem.word || currentItem.character || currentItem.phrase}}</text>
+    </view>
+
+    <input class="input-field"
+           placeholder="在此输入答案"
+           value="{{userInput}}"
+           bindinput="handleInput"
+           confirm-type="done"
+           bindconfirm="submitAnswer"
+           disabled="{{showAnswer}}" />
+
+    <button type="primary" class="action-button" bindtap="submitAnswer" disabled="{{showAnswer || !userInput.trim()}}">提交答案</button>
+
+    <view wx:if="{{showAnswer}}" class="feedback-section">
+      <text class="feedback-text {{feedback === '正确!' ? 'correct' : 'incorrect'}}">{{feedback}}</text>
+      <text class="correct-answer-label">正确答案:</text>
+      <text class="correct-answer-text">{{ currentItem.type === 'chinese' ? (currentItem.character || currentItem.phrase) : currentItem.word }}</text>
+      <button type="warn" class="action-button next-button" bindtap="nextItem">下一个</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 60rpx;
+}
+
+.content {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 60rpx;
+  min-height: 100rpx; /* Ensure space for message */
+  display: flex;
+  flex-direction: column; /* Changed for stats layout */
+  justify-content: center;
+  align-items: center;
+}
+
+.message-text {
+  margin-bottom: 20rpx; /* Space between message and stats */
+}
+
+.stats-container {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #555;
+}
+
+.stat {
+  display: block; /* Each stat on a new line */
+  margin-bottom: 10rpx;
+}
+
+.tip-message {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #777;
+}
+
+.nav-button { /* Changed from generic button to class */
+  margin-top: 30rpx;
+  width: 70%;
+}

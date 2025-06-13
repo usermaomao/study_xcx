@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/parent-dashboard/parent-dashboard",
+    "pages/content-hub/content-hub",
+    "pages/entry-chinese/entry-chinese",
+    "pages/entry-english/entry-english",
+    "pages/manage-lexicon/manage-lexicon",
+    "pages/review-hub/review-hub",
+    "pages/review-dictation/review-dictation"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小学语数外复习助手",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

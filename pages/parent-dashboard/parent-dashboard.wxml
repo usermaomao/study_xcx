@@ -1,0 +1,27 @@
+<view class="container">
+  <text class="title">家长控制台 (Parent Dashboard)</text>
+
+  <view class="add-child-section">
+    <input class="input-field" placeholder="输入孩子姓名 (Child's Name)" value="{{childNameInput}}" bindinput="handleChildNameInput" />
+    <button type="primary" bindtap="addChild">添加孩子 (Add Child)</button>
+  </view>
+
+  <text class="list-title">已添加的孩子:</text>
+  <view wx:if="{{children.length === 0}}" class="empty-message">
+    <text>还没有添加孩子。</text>
+  </view>
+  <view wx:else class="children-list">
+    <view wx:for="{{children}}" wx:key="id" class="child-item">
+      <text class="child-name">{{item.name}} {{item.id === currentChildId ? '(当前)' : ''}}</text>
+      <view class="button-group">
+        <button size="mini" bindtap="switchChild" data-id="{{item.id}}">切换到此孩子</button>
+        <button size="mini" type="warn" bindtap="deleteChild" data-id="{{item.id}}">删除</button>
+      </view>
+    </view>
+  </view>
+
+  <button wx:if="{{currentChildId}}" type="default" class="manage-content-button" bindtap="navigateToContentHub">内容管理 (Content Management)</button>
+  <view wx:else class="empty-message">
+    <text>请先选择一个孩子以管理内容。</text>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<view class="container">
+  <text class="title">小学语数外复习助手</text>
+  <view class="content">
+    <text class="message-text">{{message}}</text>
+    <view wx:if="{{currentChildName}}" class="stats-container">
+      <text class="stat">语文词条: {{chineseCount}}</text>
+      <text class="stat">英语词条: {{englishCount}}</text>
+    </view>
+    <view wx:if="{{!currentChildName && !message.includes('加载中')}}" class="tip-message">
+       <text>选择孩子后，可查看学习内容统计并开始学习。</text>
+    </view>
+  </view>
+  <button type="primary" class="nav-button" bindtap="goToParentDashboard">家长控制台</button>
+  <button wx:if="{{currentChildName}}" type="default" class="nav-button" bindtap="goToContentHub">管理学习内容</button>
+  <button wx:if="{{currentChildName && (chineseCount > 0 || englishCount > 0)}}" type="success" class="nav-button" bindtap="goToReviewHub">开始复习</button>
+</view>

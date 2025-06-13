@@ -1,0 +1,26 @@
+<view class="container">
+  <text class="title">{{editingId ? '编辑' : '录入'}}语文内容</text>
+  <form bindsubmit="saveContent">
+    <view class="form-group">
+      <label>汉字 (Character):</label>
+      <input name="character" value="{{character}}" placeholder="输入汉字" bindinput="handleInput" data-field="character" />
+    </view>
+    <view class="form-group">
+      <label>拼音 (Pinyin):</label>
+      <input name="pinyin" value="{{pinyin}}" placeholder="输入拼音" bindinput="handleInput" data-field="pinyin" />
+    </view>
+    <view class="form-group">
+      <label>词语 (Word/Phrase):</label>
+      <input name="phrase" value="{{phrase}}" placeholder="输入词语" bindinput="handleInput" data-field="phrase" />
+    </view>
+    <view class="form-group">
+      <label>释义 (Definition):</label>
+      <textarea name="definition" value="{{definition}}" placeholder="输入释义" bindinput="handleInput" data-field="definition" auto-height="true"></textarea>
+    </view>
+    <view class="form-group">
+      <label>例句 (Example Sentence):</label>
+      <textarea name="example" value="{{example}}" placeholder="输入例句" bindinput="handleInput" data-field="example" auto-height="true"></textarea>
+    </view>
+    <button form-type="submit" type="primary">保存 (Save)</button>
+  </form>
+</view>

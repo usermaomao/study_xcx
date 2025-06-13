@@ -1,0 +1,102 @@
+.container {
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.no-child-message {
+  text-align: center;
+  color: #888;
+  margin-top: 100rpx;
+  padding: 20rpx;
+}
+.no-child-message button {
+  margin-top: 20rpx;
+}
+
+.section {
+  margin-bottom: 40rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.empty-list {
+  color: #888;
+  padding: 20rpx 0;
+  text-align: center;
+}
+.nav-link {
+  color: #007aff; /* Standard link color */
+  text-decoration: underline;
+  margin-left: 10rpx;
+}
+
+.lexicon-list {
+  margin-top: 10rpx;
+}
+
+.lexicon-item {
+  background-color: #fff;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.chinese-item {
+  border-left: 5rpx solid #4CAF50; /* Green for Chinese */
+}
+
+.english-item {
+  border-left: 5rpx solid #2196F3; /* Blue for English */
+}
+
+.item-content {
+  flex-grow: 1;
+  margin-right: 20rpx;
+}
+
+.item-main {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 5rpx;
+}
+
+.item-sub {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 8rpx;
+}
+
+.item-def {
+  font-size: 24rpx;
+  color: #777;
+  white-space: pre-wrap; /* Preserve line breaks in definition */
+}
+
+.item-actions button {
+  margin-left: 10rpx;
+  margin-bottom: 5rpx; /* Stack buttons vertically on small screens if needed */
+  display: block; /* Make buttons take full width in their container */
+}
+.item-actions button:last-child {
+    margin-bottom: 0;
+}
