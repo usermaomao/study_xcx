@@ -1,3 +1,0 @@
-<view class="container">
-  <button type="primary" bindtap="parentLogin">家长登录 (Parent Login)</button>
-</view>
